@@ -1,0 +1,17 @@
+m=np.mean(MutationCount)
+s=np.std(MutationCount)
+z=(MutationCount-m)/s
+outliers=MutationCount[np.abs(z)>3]
+no_outliers=MutationCount[np.abs(z)<3]
+print(outliers)
+print(no_outliers)
+#Outliers visualization..............................
+print("====================================================================")
+plt.boxplot(MutationCount)
+plt.ylabel("MutationCount")
+plt.title("Data with Outliers")
+plt.show()
+plt.boxplot(no_outliers)
+plt.ylabel("MutationCount")
+plt.title("Data without Outliers")
+plt.show()
