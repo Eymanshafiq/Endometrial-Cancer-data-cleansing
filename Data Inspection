@@ -1,0 +1,7 @@
+#Data Inspection...............................
+print(data.columns)
+print(data.info())
+print(data.describe())
+print(data.head())
+print(data.tail())
+print("Shape of Data=",data.shape)
