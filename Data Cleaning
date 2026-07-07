@@ -1,0 +1,8 @@
+#Data cleaning.....................
+MutationCount = pd.to_numeric(
+    data["Mutation Count"],
+    errors="coerce"
+).dropna()
+data.duplicated()
+data.drop_duplicates()
+print(data)
