@@ -1,0 +1,17 @@
+#Data Statistics..........................
+print("Mean:",np.mean(MutationCount))
+print("Median:",np.median(MutationCount))
+print("variance:",np.var(MutationCount))
+print("Standard deviation:",np.std(MutationCount))
+print("Maximum Value:",np.max(MutationCount))
+print("Minimum:",np.min(MutationCount))
+#outlier detection...............................
+# Uisng the IQR data
+print("=============================================================")
+Q1=MutationCount.quantile(0.25)
+Q3=MutationCount.quantile(0.75)
+IQR=Q3-Q1
+lower=Q1-1.5*IQR
+upper=Q3+1.5*IQR
+outliersfreedata=MutationCount[(MutationCount<lower)|(MutationCount>upper)]
+print("DATA WITHOUT OUTLIERS",outliersfreedata)
